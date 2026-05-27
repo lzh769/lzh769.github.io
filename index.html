@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>简约目录</title>
+    <style>
+        .simple-toc {
+            width: 250px;
+            float: right;
+            margin: 0 0 20px 20px;
+            background: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .toc-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .toc-item {
+            margin: 5px 0;
+            padding-left: 10px;
+        }
+        
+        .toc-item.level-1 {
+            font-weight: bold;
+        }
+        
+        .toc-item.level-2 {
+            padding-left: 20px;
+            font-size: 0.95em;
+        }
+        
+        .toc-item a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .toc-item a:hover {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>简约目录示例</h1>
+    
+    <div class="simple-toc">
+        <div class="toc-title">📋 文章大纲</div>
+        <div class="toc-item level-1"><a href="#intro">简介</a></div>
+        <div class="toc-item level-2"><a href="#intro-1">背景介绍</a></div>
+        <div class="toc-item level-2"><a href="#intro-2">研究目的</a></div>
+        
+        <div class="toc-item level-1"><a href="#method">方法</a></div>
+        <div class="toc-item level-2"><a href="#method-1">实验设计</a></div>
+        <div class="toc-item level-2"><a href="#method-2">数据分析</a></div>
+        
+        <div class="toc-item level-1"><a href="#result">结果</a></div>
+        <div class="toc-item level-1"><a href="#discuss">讨论</a></div>
+        <div class="toc-item level-1"><a href="#conclusion">结论</a></div>
+    </div>
+    
+    <div style="margin-right: 280px;">
+        <h2 id="intro">简介</h2>
+        <p>内容...</p>
+        
+        <h3 id="intro-1">背景介绍</h3>
+        <p>内容...</p>
+        
+        <h3 id="intro-2">研究目的</h3>
+        <p>内容...</p>
+        
+        <h2 id="method">方法</h2>
+        <p>内容...</p>
+        
+        <h2 id="result">结果</h2>
+        <p>内容...</p>
+    </div>
+</body>
+</html>
