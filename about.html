@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>文档目录示例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .toc {
+            width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .toc h3 {
+            color: #2c3e50;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .toc ul {
+            list-style: none;
+        }
+        
+        .toc li {
+            margin: 8px 0;
+        }
+        
+        .toc a {
+            text-decoration: none;
+            color: #34495e;
+            display: block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .toc a:hover {
+            background-color: #f0f7ff;
+            color: #2980b9;
+            padding-left: 20px;
+        }
+        
+        .toc .level-2 {
+            padding-left: 20px;
+            font-size: 0.95em;
+        }
+        
+        .toc .level-3 {
+            padding-left: 40px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        .content {
+            flex: 1;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .content h2 {
+            color: #2c3e50;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .content h3 {
+            color: #34495e;
+            margin: 20px 0 10px 0;
+        }
+        
+        .content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .current {
+            background-color: #e8f4fc;
+            color: #2980b9 !important;
+            font-weight: bold;
+            border-left: 3px solid #3498db;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>技术文档目录示例</h1>
+    
+    <div class="container">
+        <!-- 目录侧边栏 -->
+        <aside class="toc" id="tableOfContents">
+            <h3>📑 文档目录</h3>
+            <ul>
+                <li><a href="#section1" class="level-1">第一章：HTML基础</a></li>
+                <li><a href="#section1-1" class="level-2">1.1 HTML简介</a></li>
+                <li><a href="#section1-2" class="level-2">1.2 基本结构</a></li>
+                
+                <li><a href="#section2" class="level-1">第二章：CSS样式</a></li>
+                <li><a href="#section2-1" class="level-2">2.1 CSS选择器</a></li>
+                <li><a href="#section2-2" class="level-2">2.2 盒模型</a></li>
+                <li><a href="#section2-3" class="level-3">2.2.1 内边距</a></li>
+                <li><a href="#section2-4" class="level-3">2.2.2 外边距</a></li>
+                
+                <li><a href="#section3" class="level-1">第三章：JavaScript</a></li>
+                <li><a href="#section3-1" class="level-2">3.1 基础语法</a></li>
+                <li><a href="#section3-2" class="level-2">3.2 DOM操作</a></li>
+                
+                <li><a href="#section4" class="level-1">第四章：响应式设计</a></li>
+                <li><a href="#section5" class="level-1">第五章：最佳实践</a></li>
+            </ul>
+        </aside>
+        
+        <!-- 正文内容 -->
+        <main class="content" id="mainContent">
+            <h2 id="section1">第一章：HTML基础</h2>
+            <p>HTML（HyperText Markup Language）是用于创建网页的标准标记语言。</p>
+            
+            <h3 id="section1-1">1.1 HTML简介</h3>
+            <p>HTML由一系列元素组成，这些元素用来包裹不同部分的内容，使其以某种方式呈现。</p>
+            
+            <h3 id="section1-2">1.2 基本结构</h3>
+            <p>每个HTML文档都以文档类型声明开始，接着是html、head和body元素。</p>
+            
+            <h2 id="section2">第二章：CSS样式</h2>
+            <p>CSS用于描述HTML元素在屏幕上的呈现方式。</p>
+            
+            <h3 id="section2-1">2.1 CSS选择器</h3>
+            <p>选择器用于选取要设置样式的HTML元素。</p>
+            
+            <h3 id="section2-2">2.2 盒模型</h3>
+            <p>CSS盒模型是布局的基础概念。</p>
+            
+            <h4 id="section2-3">2.2.1 内边距</h4>
+            <p>内边距是内容和边框之间的空间。</p>
+            
+            <h4 id="section2-4">2.2.2 外边距</h4>
+            <p>外边距是盒子与其他元素之间的空间。</p>
+            
+            <h2 id="section3">第三章：JavaScript</h2>
+            <p>JavaScript是一种轻量级的解释型编程语言。</p>
+            
+            <h3 id="section3-1">3.1 基础语法</h3>
+            <p>变量、数据类型、运算符等基础概念。</p>
+            
+            <h3 id="section3-2">3.2 DOM操作</h3>
+            <p>通过JavaScript操作文档对象模型。</p>
+            
+            <h2 id="section4">第四章：响应式设计</h2>
+            <p>使网页在不同设备上都能良好显示的设计方法。</p>
+            <p>（更多内容...）</p>
+            
+            <h2 id="section5">第五章：最佳实践</h2>
+            <p>编写高质量代码的建议和规范。</p>
+            <p>（更多内容...）</p>
+        </main>
+    </div>
+    
+    <!-- 返回顶部按钮 -->
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        // 目录点击高亮效果
+        document.querySelectorAll('.toc a').forEach(link => {
+            link.addEventListener('click', function() {
+                // 移除所有当前激活状态
+                document.querySelectorAll('.toc a').forEach(a => {
+                    a.classList.remove('current');
+                });
+                // 为当前点击的链接添加激活状态
+                this.classList.add('current');
+            });
+        });
+
+        // 监听滚动，高亮当前可见的章节
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.content h2, .content h3');
+            const tocLinks = document.querySelectorAll('.toc a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            tocLinks.forEach(link => {
+                link.classList.remove('current');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('current');
+                }
+            });
+            
+            // 显示/隐藏返回顶部按钮
+            const backToTop = document.getElementById('backToTop');
+            if (window.scrollY > 500) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // 返回顶部按钮点击事件
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 页面加载时默认高亮第一个链接
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.location.hash) {
+                const targetLink = document.querySelector(`.toc a[href="${window.location.hash}"]`);
+                if (targetLink) {
+                    targetLink.classList.add('current');
+                }
+            } else {
+                const firstLink = document.querySelector('.toc a.level-1');
+                if (firstLink) {
+                    firstLink.classList.add('current');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
